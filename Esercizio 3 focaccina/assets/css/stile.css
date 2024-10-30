@@ -1,0 +1,39 @@
+header div, .div_inizio{
+    padding-left: 65em;
+}
+
+.logo{
+    width: 25em;
+    padding-left: 64em;
+}
+
+.inizio{
+    color: #004D62;
+}
+
+.div_inizio{
+    background-color: #FFFBF1;
+    border-top: 2px solid orange;
+}
+
+.sopra{
+    width: 45vw;
+    margin: 0 auto;
+}
+
+.divmid{
+    border-left: 2px solid orange;
+    padding-left: 1em;
+}
+
+.divmid a{
+    color: rgb(11, 83, 59);
+}
+
+.feature{
+    color: orangered;
+}
+
+.last a{
+    color: #004D62;
+}
