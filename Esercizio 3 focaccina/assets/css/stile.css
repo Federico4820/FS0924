@@ -1,3 +1,7 @@
+html, body{
+    font-family: Georgia, 'Times New Roman', Times, serif
+}
+
 header div, .div_inizio{
     padding-left: 65em;
 }
