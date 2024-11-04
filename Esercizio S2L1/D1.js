@@ -51,7 +51,7 @@ myName="Lepore";
 
 const mySurname="Lepore"
 
-//mySurname="cognome"
+mySurname="cognome"
 
 console.log(mySurname)
 
