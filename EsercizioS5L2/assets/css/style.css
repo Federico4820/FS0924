@@ -457,3 +457,15 @@ footer a {
   border-color: #c3c3c3;
   backdrop-filter: blur(10px);
 }
+
+aside div{
+  position: relative;
+}
+
+.fa-tag{
+  position: absolute;
+  font-size: 500%;
+  opacity: 0.1;
+  right: 3%;
+  top: 5%;
+}
