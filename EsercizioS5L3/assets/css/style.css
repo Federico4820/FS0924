@@ -9,7 +9,7 @@ body {
   text-align: center;
 }
 
-button{
+button {
   background-color: #ffdf7e;
   border: 0;
   font-weight: 700;
@@ -28,7 +28,7 @@ nav {
 }
 
 button img {
-  width: 10%;
+  width: 15%;
 }
 
 .shop {
@@ -38,56 +38,170 @@ button img {
   display: flex;
   align-items: center;
   justify-content: center;
-  font-size: x-large;
+  font-size: 4em;
 }
 
 nav button {
   flex-basis: 40%;
-  height: 20%;
-  border-radius: 20%;
+  height: 15%;
+  border-radius: 20px;
   font-weight: 800;
+  font-size: x-large;
 }
 
-main div{
-    background-color: #fef7e2;
-    display: flex;
-    flex-wrap: wrap;
-    border-radius: 10%;
-    width: 95%;
-    height: 45vh;
-    justify-content: center;
-    align-content: flex-start;
-    align-items: center;
-    margin: 0 auto;
-    margin-top: 2em;
+main div {
+  background-color: #fef7e2;
+  display: flex;
+  flex-wrap: wrap;
+  border-radius: 10%;
+  width: 95%;
+  justify-content: center;
+  align-content: start;
+  align-items: center;
+  margin: 0 auto;
+  margin-top: 2em;
 }
-span{
-    font-weight: bold;
+span {
+  font-weight: bold;
 }
-main p{
-    flex-basis: 49%;
+main p {
+  flex-basis: 49%;
 }
-main img{
-    width: 100%;
-    border-radius: 10% 10% 0 0;
-    height: 30vh;
+main img {
+  width: 100%;
+  border-radius: 10% 10% 0 0;
+  height: 30vh;
+}
+.divH2 {
+  width: 40%;
+  background-color: white;
 }
 h2 {
   font-weight: 900;
 }
-main button{
-    flex-basis: 30%;
-    height: 10%;
-    border-radius: 20%;
+main button {
+  flex-basis: 30%;
+  height: 4.5vh;
+  border-radius: 20px;
+  font-size: x-large;
+  margin-bottom: 20px;
 }
 
-footer div{
+footer div {
+  background-color: #fef7e2;
+  display: flex;
+  border-radius: 10%;
+  width: 95%;
+  flex-wrap: wrap;
+  margin: 0 auto;
+  text-align: left;
+  padding: 2em;
+}
+
+footer img {
+  width: 100%;
+}
+
+.ghost1,
+.ghost2 {
+  display: none;
+}
+
+/*------------------------------------------------------------------------------*/
+
+@media screen and (min-width: 576px) {
+  header {
+    position: sticky;
+    top: 0;
+  }
+  nav {
     background-color: #fef7e2;
+    width: 100%;
+    height: 15vh;
+    border-radius: 0px;
     display: flex;
-    border-radius: 10%;
-    width: 95%;
-    flex-wrap: wrap;
+    flex-wrap: nowrap;
+    justify-content: space-evenly;
+    align-items: center;
+    margin: 0;
+  }
+  .shop {
+    order: 1;
+    flex-basis: 30%;
+    height: 30%;
+    text-align: center;
+    display: flex;
+    align-items: center;
     justify-content: center;
+    font-size: 2em;
+  }
+
+  nav button {
+    order: 0;
+    flex-basis: 16%;
+    height: 20%;
+    border-radius: 20px;
+    font-weight: 800;
+    font-size: 0.6em;
+  }
+  .right {
+    order: 1;
+  }
+  body {
+    padding: 10px;
+    margin: 0;
+    text-align: left;
+  }
+  .divH2 {
+    width: 60%;
+    background-color: white;
+    margin: 0;
+    flex-basis: 100%;
+  }
+  main div {
+    text-align: center;
+    display: inline-block;
+    width: 43%;
+    margin: 1em;
+  }
+  main div img {
+    height: 10em;
+  }
+  .ghost1 {
+    display: inline-block;
+  }
+}
+
+/*------------------------------------------------------------------------------*/
+
+@media screen and (min-width: 768px) {
+  body {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+  }
+  header {
+  }
+  nav {
+    background-color: #fef7e2;
+
+    flex-wrap: nowrap;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin: 0;
+  }
+  main {
+    width: 80%;
+    justify-content: flex-end;
+  }
+  footer div {
+    background-color: #fef7e2;
+    border-radius: 10%;
+    width: 30%;
+    flex-wrap: wrap;
     margin: 0 auto;
     text-align: left;
+    padding: 2em;
+  }
 }
