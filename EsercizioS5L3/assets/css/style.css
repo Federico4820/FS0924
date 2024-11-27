@@ -1,0 +1,93 @@
+* {
+  color: #742305;
+  font-family: Arial, Helvetica, sans-serif;
+  box-sizing: border-box;
+}
+body {
+  padding: 10px;
+  margin: 0;
+  text-align: center;
+}
+
+button{
+  background-color: #ffdf7e;
+  border: 0;
+  font-weight: 700;
+}
+
+nav {
+  background-color: #fef7e2;
+  width: 95%;
+  height: 30vh;
+  border-radius: 20%;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-evenly;
+  align-content: space-around;
+  margin: 0 auto;
+}
+
+button img {
+  width: 10%;
+}
+
+.shop {
+  flex-basis: 90%;
+  height: 30%;
+  text-align: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: x-large;
+}
+
+nav button {
+  flex-basis: 40%;
+  height: 20%;
+  border-radius: 20%;
+  font-weight: 800;
+}
+
+main div{
+    background-color: #fef7e2;
+    display: flex;
+    flex-wrap: wrap;
+    border-radius: 10%;
+    width: 95%;
+    height: 45vh;
+    justify-content: center;
+    align-content: flex-start;
+    align-items: center;
+    margin: 0 auto;
+    margin-top: 2em;
+}
+span{
+    font-weight: bold;
+}
+main p{
+    flex-basis: 49%;
+}
+main img{
+    width: 100%;
+    border-radius: 10% 10% 0 0;
+    height: 30vh;
+}
+h2 {
+  font-weight: 900;
+}
+main button{
+    flex-basis: 30%;
+    height: 10%;
+    border-radius: 20%;
+}
+
+footer div{
+    background-color: #fef7e2;
+    display: flex;
+    border-radius: 10%;
+    width: 95%;
+    flex-wrap: wrap;
+    justify-content: center;
+    margin: 0 auto;
+    text-align: left;
+}
