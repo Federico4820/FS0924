@@ -1,0 +1,32 @@
+header{
+    nav{
+        background-color: #640FC5;
+        .nav-link{
+            color: white;
+        }
+    }
+}
+
+.hero{
+    background-color: #640FC5;
+    height: 33vh;
+    position: relative;
+    div{
+        margin: 0 auto;
+        width: 90%;
+        h1{
+            width: 25vw;
+            font-weight: bolder;
+            font-size: 3em;
+        }
+        p{
+            color: rgb(233, 233, 233);
+            width: 50%;
+        }
+        img{
+            position: absolute;
+            top: 0;
+            left: 50px;
+        }
+    }
+}
