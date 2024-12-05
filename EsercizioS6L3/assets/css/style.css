@@ -9,6 +9,7 @@ header nav .nav-link {
   background-color: #640FC5;
   height: 33vh;
   position: relative;
+  padding-top: 20px;
 }
 .hero div {
   margin: 0 auto;
@@ -23,10 +24,56 @@ header nav .nav-link {
   color: rgb(233, 233, 233);
   width: 50%;
 }
-.hero div img {
+.hero div .btn1 {
+  background-color: #0E6CFF;
+}
+.hero div .btn2 {
+  background-color: #FF8700;
+}
+.hero div .btn3 {
+  background-color: #4CAF50;
+}
+.hero div button {
+  color: white;
+  border: 0;
+  font-size: small;
+  border-radius: 5px;
+  padding: 13px;
+  margin-right: 5px;
+  animation: forwards;
+  animation: translate 0.5s ease-out;
+  animation-play-state: running;
+}
+@keyframes translate {
+  0% {
+    transform: translateY(-20px);
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+.hero img {
   position: absolute;
-  top: 0;
-  left: 50px;
+  right: 10vw;
+  bottom: -7vh;
+  border-radius: 20px;
+  border: 3px solid #9b0fc5;
+  box-shadow: 10px 10px 20px rgba(47, 47, 47, 0.479);
+  animation: translate 0.5s ease-out;
+  animation-play-state: running;
+}
+
+.photos {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  height: 50vh;
+}
+.photos img {
+  width: 24vw;
+  box-shadow: 10px 10px 20px rgba(47, 47, 47, 0.198);
+  border-radius: 20px;
 }
 
 /*# sourceMappingURL=style.css.map */

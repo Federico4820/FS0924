@@ -1,0 +1,11 @@
+.photos{
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    height: 50vh;
+    img{
+        width:24vw;
+        box-shadow: 10px 10px 20px rgba(47, 47, 47, 0.198);
+        border-radius: 20px;
+    }
+}
