@@ -1,4 +1,3 @@
-console.log("we")
 
 let utente1={
     Name:"Ciro",
