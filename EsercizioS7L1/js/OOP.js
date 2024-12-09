@@ -1,3 +1,5 @@
+const ol= document.getElementById("ol")
+const invio= document.getElementById("submit")
 
 let utente1={
     Name:"Ciro",
@@ -32,3 +34,21 @@ let users=new User(utente1,utente2)
 
 console.log(users)
 console.log(users.odler())
+
+let names=[]
+
+invio.addEventListener("click",()=>{
+    const namePet= document.getElementById("namePet").value;
+    const name= document.getElementById("name").value;
+    const species= document.getElementById("species").value;
+    const breed= document.getElementById("breed").value;
+    console.log(`Pet name: ${namePet}, Owner name: ${name}, species: ${species}, breed: ${breed}`)
+    const lista= document.createElement("li")
+    lista.textContent=`Pet name: ${namePet}, Owner name: ${name}, species: ${species}, breed: ${breed}`
+    ol.appendChild(lista);
+    if(names.includes(name)){
+        console.log("true");
+    }else{console.log("false");
+        names.push(name);
+    }
+})
