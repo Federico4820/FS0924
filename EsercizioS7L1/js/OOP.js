@@ -20,12 +20,16 @@ class User{
         this.name_y=y.Name
         this.surname_y=y.Surname
         this.age_y=y.Age
-        /*if(age_x>age_y){
+    }
+    odler(){
+        if(this.age_x>this.age_y){
             return `${this.name_x} is older than ${this.name_y}`
-        }else{ return `${this.name_y} is older than ${this.name_x}`}*/
+        }else{ return `${this.name_y} is older than ${this.name_x}`}
     }
 }
 
-let confronto=new User(utente1,utente2)
 
-console.log(confronto)
+let users=new User(utente1,utente2)
+
+console.log(users)
+console.log(users.odler())
