@@ -21,9 +21,11 @@ del.addEventListener("click", () => {
   localStorage.clear();
 });
 
+let sec=sessionStorage.getItem("timer")
+
 setInterval(() => {
     sec++
-    localStorage.setItem("timer",sec)
-    let localSec=localStorage.getItem("timer")
-    timer.innerText=localSec
+    sessionStorage.setItem("timer",sec)
+    let sesslSec=sessionStorage.getItem("timer")
+    timer.innerText=sesslSec   
 }, 1000);
