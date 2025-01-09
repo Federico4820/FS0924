@@ -7,10 +7,10 @@ import Container from "react-bootstrap/esm/Container";
 function AllMyBooks() {
   return (
     <Container>
-      <Row xs={1} md={3} className="g-4">
+      <Row xs={12} md={3} className="g-4 mt-4">
         {books.map(book => {
           return (
-            <Col key={0}>
+            <Col key={book.asin}>
               <Card className="h-100">
                 <Card.Img variant="top" className=" h-100" src={book.img} />
                 <Card.Body>
