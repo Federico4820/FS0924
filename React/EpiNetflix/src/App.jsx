@@ -4,6 +4,7 @@ import MyFooter from "./Components/MyFooter";
 import MyFilms from "./Components/MyFilms";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import NotFound from "./Components/NotFound";
+import MovieDetails from "./Components/MovieDetails ";
 
 function App() {
   return (
@@ -12,6 +13,7 @@ function App() {
       <Routes>
         <Route path="/" element={<MyFilms />} />
         <Route path="*" element={<NotFound />} />
+        <Route path="/movie-details/:movieId" element={<MovieDetails />} />
       </Routes>
       <MyFooter />
     </BrowserRouter>

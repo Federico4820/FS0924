@@ -5,7 +5,6 @@ import { Link, useLocation } from "react-router-dom";
 
 function MyNav() {
   const location = useLocation();
-  console.log(location);
 
   return (
     <Navbar collapseOnSelect expand="md" className="bg-black" variant="dark">
@@ -16,10 +15,24 @@ function MyNav() {
         <Navbar.Toggle aria-controls="responsive-navbar-nav" />
         <Navbar.Collapse id="responsive-navbar-nav">
           <Nav className="me-auto">
-            <Link to="/home" className=" nav-link">
+            <Link
+              to="/"
+              className={
+                location.pathname === "/" ? "nav-link active" : "nav-link"
+              }
+            >
               Home
             </Link>
-            <Nav.Link href="#">TV Shows</Nav.Link>
+            <Link
+              to="/tvshows"
+              className={
+                location.pathname === "/tvshows"
+                  ? "nav-link active"
+                  : "nav-link"
+              }
+            >
+              TV Shows
+            </Link>
             <Nav.Link href="#">Movies</Nav.Link>
             <Nav.Link href="#">Recently Added</Nav.Link>
             <Nav.Link href="#">My List</Nav.Link>

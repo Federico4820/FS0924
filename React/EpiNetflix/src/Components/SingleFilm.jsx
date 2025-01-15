@@ -1,6 +1,7 @@
 import { Component } from "react";
 import Card from "react-bootstrap/Card";
 import Col from "react-bootstrap/Col";
+import { Link } from "react-router-dom";
 
 class SingleFilm extends Component {
   state = {
@@ -37,12 +38,17 @@ class SingleFilm extends Component {
       <>
         {this.state.film.map((e) => (
           <Col xs="12" key={e.imdbID}>
-            <Card style={{}} className="m-auto mb-3 border-black">
-              <Card.Img
-                variant="top"
-                src={e.Poster}
-                style={{ height: "20rem" }}
-              />
+            <Card
+              style={{ maxWidth: "320px", height: "470px" }}
+              className="m-auto mb-3 border-black"
+            >
+              <Link to={"/movie-details/" + e.imdbID}>
+                <Card.Img
+                  variant="top"
+                  src={e.Poster}
+                  style={{ height: "470px" }}
+                />
+              </Link>
             </Card>
           </Col>
         ))}
