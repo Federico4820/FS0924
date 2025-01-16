@@ -1,21 +1,19 @@
 import { useEffect, useState } from "react";
 import { Button, Form } from "react-bootstrap";
 
-const AddComment = function (props) {
+const AddComment = function ({ asin }) {
   const [comment, setComment] = useState({
     comment: "",
     rate: 1,
-    elementId: props.asin,
+    elementId: asin,
   });
 
   useEffect(() => {
     setComment({
       ...comment,
-      elementId: props.asin,
+      elementId: asin,
     });
-    setComment(...comment);
-    // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [props.asin]);
+  }, []);
 
   const sendComment = async (e) => {
     e.preventDefault();
@@ -27,7 +25,8 @@ const AddComment = function (props) {
           body: JSON.stringify(comment),
           headers: {
             "Content-type": "application/json",
-            Authorization: "Bearer inserisci-qui-il-tuo-token",
+            Authorization:
+              "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NzVjMGYyZWQyMjA3MTAwMTVkZTJmODYiLCJpYXQiOjE3MzY5NzQ4MTYsImV4cCI6MTczODE4NDQxNn0.5VGfbu-bmwfy5p7DPbzzNvubWwVAmcj4HmxZcvMdmDo",
           },
         }
       );
@@ -36,7 +35,7 @@ const AddComment = function (props) {
         setComment({
           comment: "",
           rate: 1,
-          elementId: props.asin,
+          elementId: asin,
         });
       } else {
         throw new Error("Qualcosa è andato storto");

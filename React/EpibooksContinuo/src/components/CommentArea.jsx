@@ -4,9 +4,9 @@ import Loading from "./Loading";
 import Error from "./Error";
 import { useEffect, useState } from "react";
 
-const CommentArea = function (props) {
+const CommentArea = ({ asin }) => {
   const [comments, setComments] = useState([]);
-  const [isLoading, setisLoading] = useState(false);
+  const [isLoading, setIsLoading] = useState(false);
   const [isError, setIsError] = useState(false);
 
   // componentDidMount = async () => {
@@ -35,46 +35,46 @@ const CommentArea = function (props) {
   //   }
   // }
 
-  useEffect(
-    () =>
-      async function (prevProps) {
-        if (prevProps.asin !== props.asin) {
-          setisLoading(true);
-          try {
-            let response = await fetch(
-              "https://striveschool-api.herokuapp.com/api/comments/" +
-                props.asin,
-              {
-                headers: {
-                  Authorization: "Bearer inserisci-qui-il-tuo-token",
-                },
-              }
-            );
-            console.log(response);
-            if (response.ok) {
-              let comments = await response.json();
-              setComments(comments);
-              setisLoading(false);
-              setIsError(false);
-            } else {
-              setisLoading(false);
-              setIsError(true);
-            }
-          } catch (error) {
-            console.log(error);
-            setisLoading(false);
-            setIsError(true);
+  useEffect(() => {
+    const getComments = async () => {
+      setIsLoading(true);
+      try {
+        let response = await fetch(
+          "https://striveschool-api.herokuapp.com/api/comments/" + asin,
+          {
+            headers: {
+              Authorization:
+                "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NzVjMGYyZWQyMjA3MTAwMTVkZTJmODYiLCJpYXQiOjE3MzY5NzQ4MTYsImV4cCI6MTczODE4NDQxNn0.5VGfbu-bmwfy5p7DPbzzNvubWwVAmcj4HmxZcvMdmDo",
+            },
           }
+        );
+        console.log(response);
+        if (response.ok) {
+          let comments = await response.json();
+          setComments(comments);
+          setIsLoading(false);
+          setIsError(false);
+        } else {
+          console.log("error");
+          setIsLoading(false);
+          setIsError(true);
         }
-      },
-    [props.asin]
-  );
+      } catch (error) {
+        console.log(error);
+        setIsLoading(false);
+        setIsError(true);
+      }
+    };
+    if (asin) {
+      getComments();
+    }
+  }, [asin]);
 
   return (
     <div className="text-center">
       {isLoading && <Loading />}
       {isError && <Error />}
-      <AddComment asin={props.asin} />
+      <AddComment asin={asin} />
       <CommentList commentsToShow={comments} />
     </div>
   );
