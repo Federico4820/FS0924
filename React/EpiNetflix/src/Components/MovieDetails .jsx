@@ -21,6 +21,7 @@ const MovieDetails = function () {
   useEffect(() => {
     getMovieInfo();
     getMovieReviews();
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
   const getMovieInfo = async () => {
@@ -74,7 +75,12 @@ const MovieDetails = function () {
                 <CardTitle>{info.Plot}</CardTitle>
                 <CardText>Relase data: {info.Released}</CardText>
                 <CardText>Durata: {info.Runtime}</CardText>
-                <Button variant="primary" onClick={console.log("DAJE")}>
+                <Button
+                  variant="primary"
+                  onClick={() => {
+                    navigate("/");
+                  }}
+                >
                   Back
                 </Button>
               </CardBody>
