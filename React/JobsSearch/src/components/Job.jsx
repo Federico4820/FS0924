@@ -22,7 +22,7 @@ function Job({ data }) {
           onClick={() =>
             dispatch({
               type: "Preferiti",
-              aggiungi: data.company_name,
+              payload: data.company_name,
             })
           }
         >

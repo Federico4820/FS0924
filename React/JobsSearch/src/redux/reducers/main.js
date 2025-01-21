@@ -1,6 +1,6 @@
 const initialState = {
   main: {
-    preferiti: {},
+    preferiti: [],
   },
 };
 
@@ -13,7 +13,7 @@ const mainReducer = (state = initialState, action) => {
         ...state,
         main: {
           ...state.main,
-          preferiti: state.main.preferiti + action.aggiungi,
+          preferiti: [...state.main.preferiti, action.payload],
         },
       };
   }

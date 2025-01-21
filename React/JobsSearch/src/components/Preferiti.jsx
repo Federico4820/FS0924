@@ -1,19 +1,26 @@
 import { ListGroup } from "react-bootstrap";
+import { useSelector } from "react-redux";
 
 function Preferiti() {
+  const selector = useSelector((s) => s.main.preferiti);
+
   return (
     <>
       <ListGroup as="ol" numbered>
-        <ListGroup.Item
-          as="li"
-          className="d-flex justify-content-between align-items-start"
-        >
-          <img className=" ps-1" src="" alt="" />
-          <div className="ms-2 me-auto">
-            <div className="fw-bold">Subheading</div>
-            Cras justo odio
-          </div>
-        </ListGroup.Item>
+        {selector.map((e) => {
+          return (
+            <ListGroup.Item
+              as="li"
+              className="d-flex justify-content-between align-items-start"
+              key={e}
+            >
+              {" "}
+              <div className="ms-2 me-auto">
+                <div className="fw-bold">{e}</div>
+              </div>
+            </ListGroup.Item>
+          );
+        })}
       </ListGroup>
     </>
   );
