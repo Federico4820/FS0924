@@ -4,6 +4,7 @@ import { BrowserRouter, Route, Routes } from "react-router-dom";
 import Home from "./components/Home";
 import MyNav from "./components/MyNav";
 import Error from "./components/Error";
+import Info from "./components/info";
 
 function App() {
   return (
@@ -12,7 +13,7 @@ function App() {
         <MyNav />
         <Routes>
           <Route path="/" element={<Home />} />
-          <Route path="/info" element={<info />} />
+          <Route path="/:id" element={<Info />} />
           <Route path="*" element={<Error />} />
         </Routes>
       </BrowserRouter>

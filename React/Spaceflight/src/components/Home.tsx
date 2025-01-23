@@ -3,9 +3,12 @@ import Card from "react-bootstrap/Card";
 import Col from "react-bootstrap/Col";
 import Row from "react-bootstrap/Row";
 import { GetArticle } from "./interfaces/GetArticle";
+import { Link, useLocation } from "react-router-dom";
 
 function Home() {
-  const [ret, setRet] = useState<GetArticle>();
+  const [ret, setRet] = useState<GetArticle[]>([]);
+  const location = useLocation();
+  console.log(location);
 
   const getAPI = async () => {
     try {
@@ -29,16 +32,30 @@ function Home() {
   }, []);
 
   return (
-    <Row xs={1} md={2} className="g-4">
-      <Col>
-        <Card>
-          <Card.Img variant="top" src="holder.js/100px160" />
-          <Card.Body>
-            <Card.Title>ret.ti</Card.Title>
-          </Card.Body>
-        </Card>
-      </Col>
-    </Row>
+    <>
+      <Row xs={1} md={2} lg={3} xl={4} className="g-4">
+        {ret &&
+          ret.map((r) => {
+            return (
+              <Col key={r.id}>
+                <Link to={"/:" + r.id}>
+                  <Card style={{ height: "30em" }}>
+                    <Card.Img
+                      className=""
+                      style={{ height: "25em" }}
+                      variant="top"
+                      src={r.image_url}
+                    />
+                    <Card.Body>
+                      <Card.Title>{r.title}</Card.Title>
+                    </Card.Body>
+                  </Card>
+                </Link>
+              </Col>
+            );
+          })}
+      </Row>
+    </>
   );
 }
 

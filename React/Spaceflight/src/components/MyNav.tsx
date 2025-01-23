@@ -23,14 +23,6 @@ function MyNav() {
             >
               Home
             </Link>
-            <Link
-              to="/info"
-              className={
-                location.pathname === "/info" ? "nav-link active" : "nav-link"
-              }
-            >
-              Info
-            </Link>
           </Nav>
           <Nav>
             <Nav.Link href="#">Account</Nav.Link>
